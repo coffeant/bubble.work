@@ -1,0 +1,62 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const values = [
+  { icon: "🔧", title: "陪跑，不是卖软件", desc: "我们卖的是结果，是陪你把第一单跑通。系统装进你的电脑，心也跟着放进你的工厂。" },
+  { icon: "🔒", title: "数据，永远是你的", desc: "本地部署，客户数据、报价、名单都在你自己手上，绝不上传、绝不外泄。" },
+  { icon: "🤝", title: "长期伙伴", desc: "跑通只是开始。后续系统迭代、流程优化、模板更新，都有我们远程维护。" },
+];
+---
+
+<Layout title="关于我们 | 外贸工厂 AI 获客陪跑" description="我们为中小外贸工厂提供本地部署的 AI 获客陪跑服务，帮中小工厂不请团队也能启动外贸。">
+  <main>
+    <section style="padding:80px 0 40px;text-align:center;background:var(--bg-soft);border-bottom:1px solid var(--line);">
+      <div class="wrap">
+        <h1 style="font-size:clamp(30px,4.5vw,46px);margin-bottom:12px;">关于<span class="grad-text">我们</span></h1>
+        <p style="color:var(--muted);font-size:17px;max-width:620px;margin:0 auto;">我们相信，中小外贸工厂不缺产品，缺的是一套能真正跑起来的获客方法。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="grid2">
+          <div>
+            <h2 style="font-size:clamp(24px,3.4vw,32px);margin-bottom:20px;">帮中小工厂，不请团队也能做外贸</h2>
+            <p style="font-size:16px;line-height:1.9;margin-bottom:18px;">无数工厂守着好产品，却困在"请不起外贸业务员、不会做线上获客"的难题里。一个业务员一年十几万，还不保证有产出。</p>
+            <p style="font-size:16px;line-height:1.9;margin-bottom:18px;">我们做的事很简单：<strong>把一套 AI 外贸获客系统，装进你的电脑。</strong>用 DeepSeek 驱动，自动分析海关数据、生成开发信、做独立站 SEO/AEO、引流 WhatsApp、沉淀 CRM——把整个获客链路自动化。</p>
+            <p style="font-size:16px;line-height:1.9;">然后，我们陪着你，把系统跑起来，直到你拿到第一个真实订单。不是卖完软件就走，而是陪跑到出单。</p>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <img src="https://images.unsplash.com/photo-1554070211-e3953a3de374?auto=format&fit=crop&w=600&q=70" alt="工厂车间" style="width:100%;height:220px;object-fit:cover;border-radius:16px;" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1601897690942-bcacbad33e55?auto=format&fit=crop&w=600&q=70" alt="港口集装箱" style="width:100%;height:220px;object-fit:cover;border-radius:16px;" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4?auto=format&fit=crop&w=600&q=70" alt="远洋货轮" style="width:100%;height:220px;object-fit:cover;border-radius:16px;" loading="lazy" />
+            <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=600&q=70" alt="港口" style="width:100%;height:220px;object-fit:cover;border-radius:16px;" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap">
+        <h2 class="sec-title">我们的坚持</h2>
+        <div class="grid3">
+          {values.map((v) => (
+            <div class="card" style="text-align:center;padding-top:40px;">
+              <div style="font-size:44px;margin-bottom:18px;">{v.icon}</div>
+              <h3 style="font-size:20px;margin-bottom:12px;">{v.title}</h3>
+              <p>{v.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section style="padding:100px 0;text-align:center;background:linear-gradient(160deg,#0b1220,#141d38);">
+      <div class="wrap">
+        <h2 style="font-size:clamp(28px,4vw,40px);color:#fff;margin-bottom:16px;">想给你的工厂搭一套？</h2>
+        <p style="color:#b6c0e0;font-size:18px;margin-bottom:36px;">聊聊你的产品，我们帮你评估适不适合。</p>
+        <a class="btn btn-primary btn-lg" href="/contact/">立即咨询<span class="arr">→</span></a>
+      </div>
+    </section>
+  </main>
+</Layout>

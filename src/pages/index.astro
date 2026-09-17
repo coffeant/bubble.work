@@ -1,0 +1,178 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const wa = "https://wa.me/8618526821975";
+
+const features = [
+  { icon: "🎯", title: "AI 智能获客", desc: "AI 自动分析海关数据，筛出目标买家，生成画像与开发策略。", tag: "把线索变成名单" },
+  { icon: "✍️", title: "自动写开发信", desc: "按每个客户定制开发信和多语言社媒文案，专业、不重样。", tag: "把名单变成询盘" },
+  { icon: "🔍", title: "独立站 SEO/AEO", desc: "批量生成优化页面，让 Google 收录，更让 ChatGPT 等 AI 引擎推荐你。", tag: "让客户找到你" },
+  { icon: "📱", title: "社媒 + WhatsApp 引流", desc: "LinkedIn、Facebook、X 自动发帖，询盘导到 WhatsApp，AI 自动应答。", tag: "让咨询接得住" },
+  { icon: "🗂️", title: "内置 CRM 沉淀", desc: "客户档案、沟通记录、跟进状态自动归档，一个客户都不丢。", tag: "让成交不流失" },
+  { icon: "🚀", title: "陪跑到出单", desc: "上门安装、培训、陪跑，直到你拿到第一个真实订单。", tag: "让系统用起来" },
+];
+
+const gridFeatures = [
+  { icon: "💻", title: "本地部署", desc: "装进你的电脑，数据不出厂。" },
+  { icon: "🤖", title: "DeepSeek 驱动", desc: "成本低、可控、长期可用。" },
+  { icon: "🌍", title: "多语言", desc: "开发信、社媒，自动多语言输出。" },
+  { icon: "🔐", title: "数据安全", desc: "数据由你掌控，绝不外泄。" },
+  { icon: "⏱️", title: "自动执行", desc: "内容自动生成、自动发布。" },
+  { icon: "🤝", title: "全程陪跑", desc: "陪到你拿到第一个订单。" },
+];
+
+const testimonials = [
+  { name: "石家庄 · 丝网厂", role: "老板 王总", text: "以前发开发信没人回，现在 AI 自动筛客户、写开发信，第一个月就收到了 6 封询盘，有一个还在谈。" },
+  { name: "沧州 · 管件厂", role: "负责人 刘经理", text: "系统装在我电脑里，数据都在自己手上，心里踏实。培训完我就会自己操作了，省了养业务员的钱。" },
+  { name: "保定 · 箱包厂", role: "老板 陈总", text: "独立站之前没人看，现在做了 SEO/AEO 优化，Google 和 ChatGPT 都能搜到我们了，询盘明显变多。" },
+  { name: "宁波 · 汽配厂", role: "外贸经理 李总", text: "之前也试过平台和展会，投入大效果慢。这套系统把海关数据、独立站、WhatsApp 串起来，三个月内客户质量明显提升。" },
+  { name: "深圳 · 电子厂", role: "老板 黄总", text: "业务员写的开发信模板千篇一律，AI 能根据客户情况定制，回复率高多了。陪跑老师每周回访，有问题随时解决。" },
+  { name: "东莞 · 五金厂", role: "负责人 周经理", text: "最打动我的是数据不出厂、全程本地部署。培训后员工独立操作，现在每天都有新客户加微信询价，太省心了。" },
+];
+
+---
+
+<Layout>
+  <main>
+    <!-- ═══ HERO ═══ -->
+    <header style="position:relative;background:linear-gradient(160deg,#0b1220,#141d38 55%,#1a2345);color:#fff;padding:120px 0 80px;overflow:hidden;text-align:center;">
+      <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;opacity:.25;mix-blend-mode:screen;"></div>
+      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse at 50% 35%,#000 30%,transparent 72%);mask-image:radial-gradient(ellipse at 50% 35%,#000 30%,transparent 72%);"></div>
+      <div style="position:relative;z-index:2;" class="wrap">
+        <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:8px 18px;border-radius:999px;font-size:14px;color:#dbe4ff;margin-bottom:32px;">专为外贸工厂打造 · 本地部署</span>
+        <h1 style="font-size:clamp(36px,5.8vw,62px);color:#fff;margin-bottom:26px;">让客户 <span class="grad-text">主动找到你</span><br />而不是你满世界找客户</h1>
+        <p style="font-size:clamp(16px,2.3vw,19px);color:#b6c0e0;max-width:720px;margin:0 auto 40px;">一套装进你电脑里的 AI 外贸获客系统：自动获客、写开发信、做独立站、引流 WhatsApp、沉淀 CRM —— 陪跑到你跑通第一单。</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;">
+          <a class="btn btn-primary" href="/contact/">立即咨询<span class="arr">→</span></a>
+          <a class="btn btn-ghost" href="#features">看看怎么交付</a>
+        </div>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;color:#7c88ad;font-size:14px;">
+          <span>本地部署 · 数据不出厂</span><span>|</span><span>基于 DeepSeek</span><span>|</span><span>陪跑到出单</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:44px auto 0;padding:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;backdrop-filter:blur(8px);">
+          <img src="https://images.unsplash.com/photo-1601897690942-bcacbad33e55?auto=format&fit=crop&w=600&q=70" alt="港口集装箱" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:14px;display:block;" />
+          <img src="https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4?auto=format&fit=crop&w=600&q=70" alt="远洋货轮" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:14px;display:block;" />
+          <img src="https://images.unsplash.com/photo-1554070211-e3953a3de374?auto=format&fit=crop&w=600&q=70" alt="工厂车间" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:14px;display:block;" />
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ 双栏特性 (服务) ═══ -->
+    <section class="section" id="features">
+      <div class="wrap">
+        <h2 class="sec-title">一套系统，把客户送到你面前</h2>
+        <p class="sec-sub">从线索到成交的完整闭环——你只管报价、谈单、发货，获客和跟单交给 AI。</p>
+        <div class="grid3">
+          {features.map((f) => (
+            <div class="card">
+              <div class="card-icon">{f.icon}</div>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
+              <span style="display:inline-block;margin-top:16px;padding:6px 12px;background:#f0f4ff;color:var(--primary);border-radius:8px;font-size:13px;font-weight:600;">{f.tag}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 交付流程 ═══ -->
+    <section class="section section-soft">
+      <div class="wrap">
+        <h2 class="sec-title">怎么交付？三步，从「不会」到「出单」</h2>
+        <p class="sec-sub">不是丢给你一堆软件，是带你一步步把系统跑起来。</p>
+        <div class="grid3">
+          {[
+            { n: "STEP 1", t: "上门部署", d: "我到你工厂，把整套系统装进你的电脑，配好产品和数据。" },
+            { n: "STEP 2", t: "现场培训", d: "手把手教你：看名单、发开发信、回客户，直到你会操作。" },
+            { n: "STEP 3", t: "陪跑出单", d: "陪你跟进第一批客户，优化流程，直到你拿到第一个真实订单。" },
+          ].map((s) => (
+            <div class="card" style="text-align:center;padding-top:40px;">
+              <div style="font-size:13px;font-weight:700;letter-spacing:2px;color:var(--primary);margin-bottom:16px;">{s.n}</div>
+              <h3 style="font-size:22px;margin-bottom:12px;">{s.t}</h3>
+              <p>{s.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+<!-- ═══ 客户见证（跑马灯） ═══ -->
+    <section class="section" style="padding-top:80px;">
+      <div class="wrap">
+        <h2 class="sec-title">他们已经在用了</h2>
+        <p class="sec-sub">来自中小外贸工厂的真实反馈。</p>
+
+        <div class="t-marquee">
+          <div class="t-marquee-track" id="t-marquee-track">
+            <div class="t-marquee-group" id="t-group-a">
+              {testimonials.map((t) => (
+                <div class="card t-card">
+                  <div style="font-size:36px;line-height:1;color:var(--primary);opacity:.25;margin-bottom:14px;">"</div>
+                  <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:18px;">{t.text}</p>
+                  <div>
+                    <div style="font-weight:700;color:var(--ink);font-family:var(--font-sans);">{t.name}</div>
+                    <div style="color:var(--muted);font-size:13px;">{t.role}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div class="t-marquee-group" aria-hidden="true">
+              {testimonials.map((t) => (
+                <div class="card t-card">
+                  <div style="font-size:36px;line-height:1;color:var(--primary);opacity:.25;margin-bottom:14px;">"</div>
+                  <p style="font-size:15px;color:var(--text);line-height:1.8;margin-bottom:18px;">{t.text}</p>
+                  <div>
+                    <div style="font-weight:700;color:var(--ink);font-family:var(--font-sans);">{t.name}</div>
+                    <div style="color:var(--muted);font-size:13px;">{t.role}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 特性网格 (为什么本地部署) ═══ -->
+    <section class="section section-dark">
+      <div class="wrap">
+        <h2 class="sec-title" style="color:#fff;">为什么选本地部署？</h2>
+        <p class="sec-sub" style="color:#b6c0e0;">不是套壳软件，是一套真正装进你工厂、由你掌控的获客系统。</p>
+        <div class="grid3">
+          {gridFeatures.map((f) => (
+            <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:32px;transition:background .2s,transform .2s;">
+              <div style="font-size:34px;margin-bottom:16px;">{f.icon}</div>
+              <h3 style="color:#fff;font-size:20px;margin-bottom:10px;">{f.title}</h3>
+              <p style="color:#b6c0e0;font-size:15px;">{f.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA ═══ -->
+    <section style="padding:100px 0;text-align:center;background:radial-gradient(1200px 400px at 50% -20%,rgba(59,130,246,.14),transparent);">
+      <div class="wrap">
+        <h2 style="font-size:clamp(30px,4.4vw,46px);margin-bottom:18px;">别让订单，再流向同行</h2>
+        <p style="color:var(--muted);font-size:18px;margin-bottom:38px;">告诉我你的产品，我帮你评估这套系统能不能帮你出单。</p>
+        <a class="btn btn-primary btn-lg" href="/contact/">免费咨询，评估适不适合你<span class="arr">→</span></a>
+        <div style="margin-top:22px;color:var(--muted);font-size:14px;">平均 24 小时内回复 · 支持远程协助</div>
+      </div>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .t-marquee { margin-top: 44px; overflow: hidden; }
+  .t-marquee-track { display: flex; width: max-content; animation: t-scroll 30s linear infinite; }
+  .t-marquee:hover .t-marquee-track { animation-play-state: paused; }
+  .t-marquee-group { display: flex; gap: 24px; padding-right: 24px; }
+  .t-card { width: 340px; flex-shrink: 0; min-height: 220px; display: flex; flex-direction: column; justify-content: center; }
+  @keyframes t-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @media (max-width: 700px) {
+    .t-card { width: 260px; }
+  }
+</style>

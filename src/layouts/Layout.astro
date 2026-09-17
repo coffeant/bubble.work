@@ -1,0 +1,162 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "外贸工厂 AI 获客陪跑 | 本地部署 · 陪跑到出单",
+  description = "把一套 AI 外贸获客系统装进你的电脑：海关数据获客、独立站 SEO/AEO、社媒自动发帖、WhatsApp 引流、CRM 沉淀。本地部署，陪跑到出单。",
+} = Astro.props;
+
+const nav = [
+  { label: "首页", href: "/" },
+  { label: "服务", href: "/#features" },
+  { label: "定价", href: "/pricing/" },
+  { label: "关于", href: "/about/" },
+  { label: "博客", href: "/blog/" },
+  { label: "联系", href: "/contact/" },
+];
+
+const wa = "https://wa.me/8618526821975";
+---
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script is:inline>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          var dark = t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+        } catch (e) {}
+      })();
+    </script>
+    <style>
+      .site-nav { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+      html[data-theme="dark"] .site-nav { background: rgba(11,18,32,.9); border-bottom-color: #2c3a5c; }
+      .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+      .nav-brand { display: flex; align-items: center; text-decoration: none; }
+      .nav-brand img { height: 44px; width: auto; }
+      .nav-links { display: flex; gap: 30px; align-items: center; }
+      .nav-links a { text-decoration: none; color: var(--text); font-size: 15px; font-weight: 500; transition: color .15s; }
+      .nav-links a:hover { color: var(--primary); }
+      .nav-cta { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; border-radius: 10px; background: linear-gradient(120deg,#f59e0b,#fbbf24); color: #1a1200; font-weight: 700; text-decoration: none; font-size: 14px; }
+      .theme-toggle { background: none; border: 1px solid var(--line); border-radius: 50%; width: 38px; height: 38px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; color: var(--text); transition: background .15s, border-color .15s; }
+      .theme-toggle:hover { background: var(--bg-soft); }
+      .theme-toggle .icon-moon { display: none; }
+      html[data-theme="dark"] .theme-toggle .icon-sun { display: none; }
+      html[data-theme="dark"] .theme-toggle .icon-moon { display: block; }
+      .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; }
+      .nav-toggle .bar { display: block; width: 22px; height: 2px; background: var(--ink); margin: 5px 0; }
+      @media (max-width: 800px) {
+        .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--bg); flex-direction: column; align-items: flex-start; padding: 20px 24px; gap: 20px; border-bottom: 1px solid var(--line); }
+        .nav-links.open { display: flex; }
+        .nav-toggle { display: block; }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="site-nav">
+      <div class="wrap nav-inner">
+        <a class="nav-brand" href="/"><img src="/brand-logo.png" alt="外贸获客AI" /></a>
+        <div class="nav-links" id="navlinks">
+          {nav.map((n) => <a href={n.href}>{n.label}</a>)}
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="theme-toggle" id="themetoggle" aria-label="切换主题">
+            <span class="icon-sun">☀️</span>
+            <span class="icon-moon">🌙</span>
+          </button>
+          <a class="nav-cta" href={wa} target="_blank" rel="noreferrer">免费咨询</a>
+          <button class="nav-toggle" id="navtoggle" aria-label="菜单">
+            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <slot />
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer-grid">
+          <div>
+            <div class="f-brand"><img src="/footer-logo.png" alt="外贸获客AI" style="height:44px;" /></div>
+            <p class="f-desc">一套装进你电脑的 AI 外贸获客系统，陪跑到你跑通第一个订单。</p>
+            <p class="f-wa">商务咨询：+86 185 2682 1975（WhatsApp）</p>
+          </div>
+          <div>
+            <div class="f-col-title">导航</div>
+            <a href="/">首页</a><a href="/#features">服务</a><a href="/pricing/">定价</a><a href="/about/">关于</a>
+          </div>
+          <div>
+            <div class="f-col-title">内容</div>
+            <a href="/blog/">博客</a><a href="/contact/">联系</a><a href="#contact">微信咨询</a>
+          </div>
+        </div>
+        <div class="footer-bottom">© 2025 外贸获客AI · 本地部署 · 基于 DeepSeek · 数据不出厂</div>
+      </div>
+    </footer>
+
+    <style>
+      .site-footer { background: #0b1220; color: #7c88ad; padding: 56px 0 36px; }
+      html[data-theme="dark"] .site-footer { border-top: 1px solid #2c3a5c; }
+      .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
+      .f-brand { margin-bottom: 12px; }
+      .f-brand img { height: 32px; width: auto; }
+      .f-desc { font-size: 14px; max-width: 320px; margin-bottom: 14px; color: #94a3b8; }
+      .f-wa { font-size: 14px; color: #b6c0e0; }
+      .f-col-title { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 16px; }
+      .site-footer a { display: block; color: #94a3b8; text-decoration: none; font-size: 14px; margin-bottom: 10px; transition: color .15s; }
+      .site-footer a:hover { color: #fff; }
+      .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 24px; text-align: center; font-size: 13px; }
+      @media (max-width: 700px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+    </style>
+
+    <script>
+      const btn = document.getElementById("navtoggle");
+      const links = document.getElementById("navlinks");
+      if (btn) {
+        btn.addEventListener("click", () => links.classList.toggle("open"));
+      }
+      links.querySelectorAll("a").forEach((a) =>
+        a.addEventListener("click", () => links.classList.remove("open"))
+      );
+
+      const themeBtn = document.getElementById("themetoggle");
+      const navLogo = document.querySelector(".nav-brand img");
+      const applyTheme = (dark, persist = true) => {
+        document.documentElement.setAttribute("data-theme", dark ? "dark" : "light");
+        if (persist) localStorage.setItem("theme", dark ? "dark" : "light");
+        if (navLogo) navLogo.src = dark ? "/footer-logo.png" : "/brand-logo.png";
+      };
+      if (navLogo) {
+        const cur = document.documentElement.getAttribute("data-theme") === "dark";
+        applyTheme(cur, false);
+      }
+      if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+          const dark = document.documentElement.getAttribute("data-theme") !== "dark";
+          applyTheme(dark);
+        });
+      }
+    </script>
+  </body>
+</html>

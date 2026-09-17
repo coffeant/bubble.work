@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const priceList = [
+  "整套 AI 获客系统本地部署（装进你的电脑）",
+  "海关数据买家画像 + 获客名单生成",
+  "自动开发信 + 多语言社媒内容生成",
+  "独立站 SEO / AEO 优化与批量建页",
+  "WhatsApp 引流 + AI 自动应答接入",
+  "内置 CRM：客户档案与跟进沉淀",
+  "使用培训 + 陪跑到第一个真实订单",
+];
+
+const faqs = [
+  { q: "我不是搞技术的，能学会吗？", a: "能。系统是装好的，你只需要会看名单、点发送、回客户。我会上门现场培训，用最简单的方式带你跑一遍，直到你自己能独立操作。" },
+  { q: "数据放在我电脑里，安全吗？", a: "安全。整套系统本地部署，你的客户数据、报价、名单都存在你自己电脑上，不经过任何第三方服务器，数据完全由你掌控。" },
+  { q: "真的能出单吗？", a: "没有谁能保证一定出单。但我的价值是把获客、内容、跟进这些最耗人的环节自动化，让你把精力集中在真正能成交的客户上。陪跑到你跑通第一个订单。" },
+  { q: "维护和以后升级怎么办？", a: "我提供长期陪跑服务。系统迭代、流程优化、模板更新，都有我远程维护。你只管用，技术上的事交给我。" },
+];
+---
+---
+
+<Layout title="定价方案 | 外贸工厂 AI 获客陪跑" description="外贸获客陪跑服务定价：本地部署 + 使用培训 + 陪跑到出单，按需定制。">
+  <main>
+    <section style="padding:80px 0 40px;text-align:center;background:var(--bg-soft);border-bottom:1px solid var(--line);">
+      <div class="wrap">
+        <h1 style="font-size:clamp(30px,4.5vw,46px);margin-bottom:12px;">定价<span class="grad-text">方案</span></h1>
+        <p style="color:var(--muted);font-size:17px;max-width:600px;margin:0 auto;">一次性本地部署 + 使用培训 + 陪跑到出单，按工厂规模与需求定制。</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div style="max-width:660px;margin:0 auto;background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:44px;box-shadow:var(--shadow-lg);position:relative;overflow:hidden;">
+          <div style="position:absolute;top:0;left:50%;transform:translateX(-50%);width:200px;height:4px;background:var(--grad);border-radius:0 0 8px 8px;"></div>
+          <div style="text-align:center;margin-bottom:30px;">
+            <span style="display:inline-block;background:#fef3c7;color:#92400e;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;margin-bottom:18px;">本地部署 · 陪跑服务</span>
+            <div style="font-size:30px;font-weight:800;color:var(--ink);margin-bottom:14px;"><span style="font-size:22px;color:var(--primary);vertical-align:6px;">¥</span>5000<span style="font-size:18px;color:var(--muted);font-weight:400;">元起</span></div>
+            <p style="color:var(--muted);font-size:15px;">一次付费，包含部署、培训与陪跑。最终按规模与需求定制。</p>
+          </div>
+          <ul style="list-style:none;margin:0 0 30px;">
+            {priceList.map((item) => (
+              <li style="padding:13px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:flex-start;font-size:15px;">
+                <span style="color:#16a34a;font-weight:800;flex-shrink:0;">✓</span><span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <a class="btn btn-primary btn-block" href="/contact/">立即预约陪跑<span class="arr">→</span></a>
+          <div style="text-align:center;color:var(--muted);font-size:13px;margin-top:18px;">名额有限，同产业带优先安排上门</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="wrap">
+        <h2 class="sec-title">常见问题</h2>
+        <div style="max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px;">
+          {faqs.map((f) => (
+            <details style="background:var(--bg);border:1px solid var(--line);border-radius:14px;overflow:hidden;">
+              <summary style="padding:22px 26px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;font-size:16px;font-weight:600;color:var(--ink);user-select:none;">
+                {f.q}<span style="font-size:22px;color:var(--primary);">+</span>
+              </summary>
+              <p style="padding:0 26px 24px;color:var(--muted);font-size:15px;">{f.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
