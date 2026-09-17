@@ -35,21 +35,21 @@ const testimonials = [
 <Layout>
   <main>
     <!-- ═══ HERO ═══ -->
-    <header style="position:relative;background:linear-gradient(160deg,#0b1220,#141d38 55%,#1a2345);color:#fff;padding:120px 0 80px;overflow:hidden;text-align:center;">
-      <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80');background-size:cover;background-position:center;opacity:.25;mix-blend-mode:screen;"></div>
-      <div style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:64px 64px;-webkit-mask-image:radial-gradient(ellipse at 50% 35%,#000 30%,transparent 72%);mask-image:radial-gradient(ellipse at 50% 35%,#000 30%,transparent 72%);"></div>
+    <header class="hero">
+      <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1920&q=80');"></div>
+      <div class="hero-grid"></div>
       <div style="position:relative;z-index:2;" class="wrap">
-        <span style="display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);padding:8px 18px;border-radius:999px;font-size:14px;color:#dbe4ff;margin-bottom:32px;">专为外贸工厂打造 · 本地部署</span>
-        <h1 style="font-size:clamp(36px,5.8vw,62px);color:#fff;margin-bottom:26px;">让客户 <span class="grad-text">主动找到你</span><br />而不是你满世界找客户</h1>
-        <p style="font-size:clamp(16px,2.3vw,19px);color:#b6c0e0;max-width:720px;margin:0 auto 40px;">一套装进你电脑里的 AI 外贸获客系统：自动获客、写开发信、做独立站、引流 WhatsApp、沉淀 CRM —— 陪跑到你跑通第一单。</p>
+        <span class="hero-badge">专为外贸工厂打造 · 本地部署</span>
+        <h1 class="hero-title">让客户 <span class="grad-text">主动找到你</span><br />而不是你满世界找客户</h1>
+        <p class="hero-sub">一套装进你电脑里的 AI 外贸获客系统：自动获客、写开发信、做独立站、引流 WhatsApp、沉淀 CRM —— 陪跑到你跑通第一单。</p>
         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:40px;">
           <a class="btn btn-primary" href="/contact/">立即咨询<span class="arr">→</span></a>
           <a class="btn btn-ghost" href="#features">看看怎么交付</a>
         </div>
-        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;color:#7c88ad;font-size:14px;">
+        <div class="hero-meta">
           <span>本地部署 · 数据不出厂</span><span>|</span><span>基于 DeepSeek</span><span>|</span><span>陪跑到出单</span>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:900px;margin:44px auto 0;padding:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:20px;backdrop-filter:blur(8px);">
+        <div class="hero-strip">
           <img src="https://images.unsplash.com/photo-1601897690942-bcacbad33e55?auto=format&fit=crop&w=600&q=70" alt="港口集装箱" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:14px;display:block;" />
           <img src="https://images.unsplash.com/photo-1606185540834-d6e7483ee1a4?auto=format&fit=crop&w=600&q=70" alt="远洋货轮" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:14px;display:block;" />
           <img src="https://images.unsplash.com/photo-1554070211-e3953a3de374?auto=format&fit=crop&w=600&q=70" alt="工厂车间" loading="lazy" style="width:100%;height:150px;object-fit:cover;border-radius:14px;display:block;" />
@@ -136,14 +136,14 @@ const testimonials = [
     <!-- ═══ 特性网格 (为什么本地部署) ═══ -->
     <section class="section section-dark">
       <div class="wrap">
-        <h2 class="sec-title" style="color:#fff;">为什么选本地部署？</h2>
-        <p class="sec-sub" style="color:#b6c0e0;">不是套壳软件，是一套真正装进你工厂、由你掌控的获客系统。</p>
+        <h2 class="sec-title">为什么选本地部署？</h2>
+        <p class="sec-sub">不是套壳软件，是一套真正装进你工厂、由你掌控的获客系统。</p>
         <div class="grid3">
           {gridFeatures.map((f) => (
-            <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:32px;transition:background .2s,transform .2s;">
+            <div class="df-card">
               <div style="font-size:34px;margin-bottom:16px;">{f.icon}</div>
-              <h3 style="color:#fff;font-size:20px;margin-bottom:10px;">{f.title}</h3>
-              <p style="color:#b6c0e0;font-size:15px;">{f.desc}</p>
+              <h3>{f.title}</h3>
+              <p>{f.desc}</p>
             </div>
           ))}
         </div>
@@ -163,6 +163,36 @@ const testimonials = [
 </Layout>
 
 <style>
+  /* ───── Hero（深色为默认，浅色模式覆盖） ───── */
+  .hero { position:relative; padding:120px 0 80px; overflow:hidden; text-align:center; background:linear-gradient(160deg,#0b1220,#141d38 55%,#1a2345); color:#fff; }
+  .hero-bg { position:absolute; inset:0; background-size:cover; background-position:center; opacity:.25; mix-blend-mode:screen; }
+  .hero-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px); background-size:64px 64px; -webkit-mask-image:radial-gradient(ellipse at 50% 35%,#000 30%,transparent 72%); mask-image:radial-gradient(ellipse at 50% 35%,#000 30%,transparent 72%); }
+  .hero-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.16); padding:8px 18px; border-radius:999px; font-size:14px; color:#dbe4ff; margin-bottom:32px; }
+  .hero-title { font-size:clamp(36px,5.8vw,62px); color:#fff; margin-bottom:26px; }
+  .hero-sub { font-size:clamp(16px,2.3vw,19px); color:#b6c0e0; max-width:720px; margin:0 auto 40px; }
+  .hero-meta { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; color:#7c88ad; font-size:14px; }
+  .hero-strip { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; max-width:900px; margin:44px auto 0; padding:10px; background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.12); border-radius:20px; backdrop-filter:blur(8px); }
+
+  /* 浅色模式下的 Hero */
+  html[data-theme="light"] .hero { background:linear-gradient(160deg,#f5f8ff,#eaeffc 55%,#e2e9f9); color:var(--text); }
+  html[data-theme="light"] .hero-bg { opacity:.1; mix-blend-mode:multiply; }
+  html[data-theme="light"] .hero-grid { background-image:linear-gradient(rgba(15,23,42,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.06) 1px,transparent 1px); }
+  html[data-theme="light"] .hero-badge { background:rgba(255,255,255,.75); border-color:rgba(37,99,235,.25); color:var(--primary); }
+  html[data-theme="light"] .hero-title { color:var(--ink); }
+  html[data-theme="light"] .hero-sub { color:#475569; }
+  html[data-theme="light"] .hero-meta { color:var(--muted); }
+  html[data-theme="light"] .hero-strip { background:rgba(255,255,255,.7); border-color:rgba(37,99,235,.15); }
+  html[data-theme="light"] .hero .btn-ghost { background:rgba(15,23,42,.05); color:var(--ink); border-color:rgba(15,23,42,.2); }
+  html[data-theme="light"] .hero .btn-ghost:hover { background:rgba(15,23,42,.1); }
+
+  /* ───── 为什么选本地部署（.section-dark） ───── */
+  .df-card { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius); padding:32px; transition:background .2s,transform .2s; }
+  .df-card h3 { color:#fff; font-size:20px; margin-bottom:10px; }
+  .df-card p { color:#b6c0e0; font-size:15px; }
+  html[data-theme="light"] .df-card { background:#fff; border-color:var(--line); box-shadow:var(--shadow); }
+  html[data-theme="light"] .df-card h3 { color:var(--ink); }
+  html[data-theme="light"] .df-card p { color:var(--muted); }
+
   .t-marquee { margin-top: 44px; overflow: hidden; }
   .t-marquee-track { display: flex; width: max-content; animation: t-scroll 30s linear infinite; }
   .t-marquee:hover .t-marquee-track { animation-play-state: paused; }
